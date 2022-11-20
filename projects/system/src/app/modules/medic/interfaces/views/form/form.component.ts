@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MedicApplication } from '../../../application/medic.aplication';
+import { MedicApplication } from '../../../application/medic.application';
 import { MedicRepository } from '../../../domain/repositories/medic.repository';
 import { MedicInfrastructure } from '../../../infrastructure/medic.infrastructure';
 

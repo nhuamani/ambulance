@@ -1,1 +1,22 @@
-<p>list works!</p>
+<div class="container">
+    <div class="row">
+      <table class="table table-striped col-6">
+        <thead class="thead">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Last Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let medic of listMedics">
+            <td>{{ medic.medicId }}</td>
+            <td>{{ medic.name }}</td>
+            <td>{{ medic.lastname }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <pre>{{listMedics | json}}</pre>
+    </div>
+  </div>
+  
