@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MedicApplication } from '../../../application/medic.aplication';
 import { MedicRepository } from '../../../domain/repositories/medic.repository';
-import { MedicInfrastructure } from '../../../infrastructure/medic.infrastruture';
+import { MedicInfrastructure } from '../../../infrastructure/medic.infrastructure';
 
 @Component({
   selector: 'amb-form',

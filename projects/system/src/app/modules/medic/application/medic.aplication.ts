@@ -1,17 +1,16 @@
+import { Inject, Injectable } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 
 import { MedicFactory } from '../domain/factories/medic.factory';
 import { MedicInputs } from '../domain/inputs/input-medic.type';
 import { MedicRepository } from '../domain/repositories/medic.repository';
+import { MedicInfrastructure } from '../infrastructure/medic.infrastructure';
 
+@Injectable()
 export class MedicApplication {
-  /* es equivalente a la linea 14
-  repository: MedicRepository
-
-  constructor(repository: MedicRepository){
-    this.repository = repository;
-  } */
-  constructor(private readonly repository: MedicRepository) {}
+  constructor(
+    @Inject(MedicInfrastructure) private readonly repository: MedicRepository
+  ) {}
 
   async createMedic(
     name: string,
@@ -33,5 +32,10 @@ export class MedicApplication {
     const medic = MedicFactory.create(inputs);
 
     await this.repository.save(medic);
+  }
+
+  async listMedics() {
+    const listMedics = await this.repository.getAll();
+    return listMedics;
   }
 }
